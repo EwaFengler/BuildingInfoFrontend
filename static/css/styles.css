@@ -1,0 +1,137 @@
+body, html {
+  height: 100%;
+  margin: 0;
+
+  background-color: black;
+  font-family: Verdana, sans-serif;
+  font-size: 16px;
+}
+
+.wrapper {
+    margin-right: auto;
+    margin-left:  auto;
+
+    max-width: 1020px;
+}
+
+
+.building {
+  background-color: #c43e00;
+  color: white;
+
+  width: 100%;
+}
+
+.floor {
+  background-color: #ff6f00;
+  color: black;
+
+  width: 100%;
+}
+
+.room {
+  background-color: #ffa040;
+  color: black;
+
+  width: 390px;
+}
+
+
+#maintenance-cost-button {
+  float: right;
+  background-color: #7f0000;
+  color: white;
+  font-size: 12px;
+
+  margin: 15px 15px 0px;
+  padding: 5px 20px;
+  border: none;
+  border-radius: 10px;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.card {
+  margin: 15px;
+  padding: 15px;
+  border-radius: 20px;
+
+  position: relative;
+  flex-grow: 1;
+}
+
+.properties {
+  margin: 10px;
+  font-size: 12px;
+}
+
+.properties-list {
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+}
+
+.properties-list li {
+  margin: 5px 0px 5px 15px;
+}
+
+.properties p {
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* TODO: class */
+p {
+  margin: 0;
+}
+
+
+.delete-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.arrow {
+  display: inline-block;
+  width: 0;
+  height: 0;
+}
+
+.arrow-down {
+  margin: 0px 5px 2px 0px;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+
+  border-top: 5px solid;
+}
+
+.arrow-right {
+  margin: 0px 5px -1px 0px;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+
+  border-left: 5px solid;
+}
+
+.building .arrow-down {
+  border-top-color: white;
+}
+
+.building .arrow-right {
+  border-left-color: white;
+}
+
+.floor .arrow-down, .room .arrow-down {
+  border-top-color: black;
+}
+
+.floor .arrow-right, .room .arrow-right {
+  border-left-color: black;
+}
