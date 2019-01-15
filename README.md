@@ -1,6 +1,6 @@
-# buildinginfofrontend
+# Building Info Frontend
 
-> A Vue.js project
+Przy działającym [serwerze](https://github.com/Hound1997c/bildowanie) na porcie 8080 strona pozwala na wyświetlanie i usuwanie budynków, pięter i pomieszczeń. 
 
 ## Build Setup
 
@@ -8,14 +8,7 @@
 # install dependencies
 npm install
 
-# serve with hot reload at localhost:8080
+# serve with hot reload at localhost:3000
 npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
 ```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
