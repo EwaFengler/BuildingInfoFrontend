@@ -18,6 +18,7 @@
 
 <script>
 import {HTTP} from '../http-common'
+import {bus} from '../main'
 
 export default {
   name: 'Properties',
@@ -41,14 +42,22 @@ export default {
     }
   },
   created () {
-    for (let property in this.constProperties) {
-      HTTP.get(`/structure/${property}/${this.structureId}`)
-        .then(response => {
-          this.constProperties[property] = response.data
-        })
-        .catch(e => {
-          // console.log(e)
-        })
+    this.getProperties()
+    bus.$on('structuresUpdated', () => {
+      this.getProperties()
+    })
+  },
+  methods: {
+    getProperties: function () {
+      for (let property in this.constProperties) {
+        HTTP.get(`/structure/${property}/${this.structureId}`)
+          .then(response => {
+            this.constProperties[property] = response.data
+          })
+          .catch(e => {
+            console.log(e)
+          })
+      }
     }
   }
 }
