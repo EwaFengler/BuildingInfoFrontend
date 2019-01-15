@@ -6,22 +6,19 @@
             :key="structure.id"
             v-bind:structure="structure"
             v-bind:structureTypes="structureTypes"/>
-      <AddCard v-bind:structureType="structureTypes[0]"/>
     </div>
   </div>
 </template>
 
 <script>
 import Card from './components/Card'
-import AddCard from './components/AddCard'
 import {HTTP} from './http-common'
 import {bus} from './main'
 
 export default {
   name: 'App',
   components: {
-    Card,
-    AddCard
+    Card
   },
   data () {
     return {

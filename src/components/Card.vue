@@ -10,7 +10,6 @@
         :key="structure.id"
         v-bind:structure="structure"
         v-bind:structureTypes="structureTypes.slice(1)"/>
-      <AddCard v-bind:structureType="structureTypes[1]"/>
     </div>
   </div>
 </template>
@@ -18,14 +17,12 @@
 <script>
 import Properties from './Properties'
 import DeleteButton from './DeleteButton'
-import AddCard from './AddCard'
 
 export default {
   name: 'Card',
   components: {
     Properties,
-    DeleteButton,
-    AddCard
+    DeleteButton
   },
   props: {
     structureTypes: Array,
