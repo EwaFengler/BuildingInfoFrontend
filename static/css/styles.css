@@ -37,16 +37,32 @@ body, html {
 }
 
 
-#maintenance-cost-button {
+#options {
   float: right;
   background-color: #7f0000;
   color: white;
-  font-size: 12px;
 
   margin: 15px 15px 0px;
-  padding: 5px 20px;
-  border: none;
+  padding: 15px;
   border-radius: 10px;
+}
+
+#options li {
+  font-size: 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#options input {
+  width: 30px;
+  padding: 1px 5px;
+  margin-left: 10px;
+  border: none;
+  border-radius: 8px;
+
+  text-align: right;
 }
 
 .flex-container {
@@ -71,13 +87,13 @@ body, html {
   font-size: 12px;
 }
 
-.properties-list {
+.building-info-list {
   margin: 0px;
   padding: 0px;
   list-style-type: none;
 }
 
-.properties-list li {
+.building-info-list li {
   margin: 5px 0px 5px 15px;
 }
 
@@ -86,7 +102,6 @@ body, html {
   cursor: pointer;
 }
 
-/* TODO: class */
 p {
   margin: 0;
 }

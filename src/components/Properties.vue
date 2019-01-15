@@ -4,14 +4,14 @@
     <p v-on:click="expanded = !expanded">
       Properties
     </p>
-    <ul class="properties-list" v-if="expanded">
+    <ul class="building-info-list" v-if="expanded">
       <li>Area: {{ constProperties.area }}</li>
       <li>Cube: {{ constProperties.cube }}</li>
       <li>Light: {{ constProperties.light }}</li>
       <li>Heating: {{ constProperties.heating }}</li>
       <li>Heating per cube: {{ constProperties.heatingPerCube }}</li>
       <li>Light per area: {{ constProperties.lightPerArea }}</li>
-      <li>Maintenance cost: {{ calcProperties.maintenanceCost }}</li>
+      <li>Maintenance cost: {{ maintenanceCost }}</li>
     </ul>
   </div>
 </template>
@@ -36,15 +36,16 @@ export default {
         heatingPerCube: 0,
         lightPerArea: 0
       },
-      calcProperties: {
-        maintenanceCost: 1000
-      }
+      maintenanceCost: 0
     }
   },
   created () {
     this.getProperties()
     bus.$on('structuresUpdated', () => {
       this.getProperties()
+    })
+    bus.$on('maintenanceCostUnitChanged', (cost) => {
+      this.getMaintenanceCost(cost)
     })
   },
   methods: {
@@ -58,6 +59,15 @@ export default {
             console.log(e)
           })
       }
+    },
+    getMaintenanceCost: function (cost) {
+      HTTP.get(`/structure/maintenance-cost/${this.structureId}/${cost}`)
+        .then(response => {
+          this.maintenanceCost = response.data
+        })
+        .catch(e => {
+          console.log(e)
+        })
     }
   }
 }
